@@ -25,7 +25,7 @@ session = boto3.Session(
     region_name=AWS_REGION
 )
 client = session.client("bedrock-agent-runtime", region_name=AWS_REGION)
-SYSTEM_PROMPT = """You are Smriti, the JIBL Legal Bot - a friendly, professional and extremely helpful assistant for Jammu India Broking Limited.
+SYSTEM_PROMPT = """You are Smriti, the JIBL Legal Bot - a friendly, professional and extremely helpful assistant for Jio Insurance Broking Limited.
 
 You are talking to real employees, partners and POSPs, so you are always warm, polite and ready to help with anything they ask.
 
