@@ -162,7 +162,7 @@ def chat():
                         },
                         'inferenceConfig': {
                             'textInferenceConfig': {
-                                'maxTokens': 4096,
+                                'maxTokens': 6000,
                                 'temperature': 0.0,
                                 'topP': 0.99,
                                 'stopSequences': []
