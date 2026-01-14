@@ -170,7 +170,7 @@ def chat():
                     },
                     'retrievalConfiguration': {
                         'vectorSearchConfiguration': {
-                            'numberOfResults': 10
+                            'numberOfResults': 20
                         }
                     }
                 }
