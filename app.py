@@ -132,8 +132,6 @@ $search_results$
 
 $output_format_instructions$
 """
-
-"""
 @app.route("/")
 def index():
     response = make_response(render_template("index.html"))
