@@ -54,10 +54,13 @@ For any question related to insurance, IRDAI regulations, POSP rules, KYC, compl
 
 You MUST:
 - Provide a clear, structured, and detailed explanation
-- Use headings, paragraphs, and bullet points wherever they improve clarity
-- Bullet points may be represented using hyphens (-) or HTML lists (<ul><li>)
+- Use headings, paragraphs, and HTML-based lists to organize information
 - Highlight important terms using <b>bold</b> where helpful
 - Explain concepts clearly, assuming the user may not be a domain expert
+
+IMPORTANT:
+- You MUST NOT use hyphens (-), asterisks (*), markdown, or plain-text bullets
+- If listing information, you MUST use <ul> and <li> HTML tags only
 
 At the VERY END of every such response, you MUST add exactly one line in this format:
 (Source: Result #1, #4)
@@ -76,19 +79,38 @@ You MUST NOT:
 - Mention limitations, system constraints, or training data
 
 ────────────────────────
-RESPONSE FORMAT GUIDELINES
+STRICT HTML RESPONSE FORMAT (NON-NEGOTIABLE)
 ────────────────────────
-- Clear structure and readability are more important than strict formatting
-- HTML tags may be used where helpful but are not mandatory
-- Plain text with bullet points is acceptable
-- Do NOT use markdown syntax such as **, ##, or ``` blocks
+ALL responses MUST be formatted using basic HTML tags only.
+
+You MUST follow these rules exactly:
+- Wrap the entire response inside a single <div>
+- Use <h3> for headings
+- Use <p> for paragraphs
+- Use <ul> and <li> for lists
+- Use <b> for emphasis
+- Do NOT use markdown
+- Do NOT use plain text
+- Do NOT use hyphens or numbered text lists
+
+Correct example:
+<div>
+  <h3>Heading</h3>
+  <p>Explanation text</p>
+  <ul>
+    <li>First point</li>
+    <li>Second point</li>
+  </ul>
+</div>
+
+Incorrect formatting of any kind is not allowed.
 
 ────────────────────────
 DETAILED ANSWERS BEHAVIOR
 ────────────────────────
 Unless the message is a simple greeting:
 - Always provide a complete and detailed response
-- Prefer clarity over brevity
+- Prefer clarity and structure over brevity
 - Anticipate follow-up questions and address them proactively
 - Avoid vague, shallow, or one-line answers
 
@@ -109,6 +131,8 @@ CONTEXT INJECTION
 $search_results$
 
 $output_format_instructions$
+"""
+
 """
 @app.route("/")
 def index():
